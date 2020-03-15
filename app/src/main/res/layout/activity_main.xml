@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/titleTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="6dp"
+        android:text="@string/app_name"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/resetButtonId"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="resetClick"
+
+        android:text="RESET" />
+
+    <TextView
+        android:id="@+id/scoreTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resetButtonId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="0 : 0"
+        android:textColor="#000"
+        android:textSize="33sp" />
+
+    <TextView
+        android:id="@+id/meTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resetButtonId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@id/scoreTextViewId"
+        android:text="You"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/meResultTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/meTextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/meTextViewId"
+        android:text="RocK"
+        android:textSize="15sp" />
+
+    <TextView
+
+        android:id="@+id/compTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resetButtonId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/scoreTextViewId"
+        android:text="Comp"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/compResultTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/compTextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/compTextViewId"
+        android:text="Scissor"
+        android:textSize="15sp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="invisible"
+        android:id="@+id/lottieAnimationView"
+        android:layout_below="@id/scoreTextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
+
+    <TextView
+        android:id="@+id/lastResultTextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lottieAnimationView"
+        android:layout_centerHorizontal="true"
+        android:text="Won Lost Tie"
+        android:textColor="#000"
+        android:textSize="35sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#4CAF50"
+            android:onClick="rpsButtonselected"
+            android:scaleType="fitCenter"
+            android:tag="1"
+            android:src="@drawable/stone" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#F44336"
+            android:onClick="rpsButtonselected"
+            android:scaleType="fitCenter"
+            android:tag="2"
+            android:src="@drawable/paper" />
+
+        <ImageView
+            android:tag="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#2196F3"
+            android:onClick="rpsButtonselected"
+            android:scaleType="fitCenter"
+            android:src="@drawable/scissor" />
+    </LinearLayout>
+
+
+</RelativeLayout>
